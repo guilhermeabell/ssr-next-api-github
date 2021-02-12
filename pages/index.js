@@ -1,5 +1,5 @@
-import React from "react";
-import "isomorphic-fetch";
+import React from 'react';
+import 'isomorphic-fetch';
 
 const Home = ({ repositories }) => (
 
