@@ -1,12 +1,13 @@
-import React from 'react';
-import 'isomorphic-fetch';
+import React from "react";
+import "isomorphic-fetch";
+
 const Home = ({ repositories }) => (
-<div>
-    { repositories.map(repo => <h1 key={repo.id}>{repo.name}</h1>)}</div>
+
+<div>{ repositories.map(repo => <h1 key={repo.id}>{repo.name}</h1>)}</div>
 );
 
 Home.getInitialProps = async () => {
-    const repos = await fetch('https://api.github.com/orgs/rocketseat/repos');
+    const response = await fetch("https://api.github.com/orgs/rocketseat/repos");
     const repositories = await response.json();
 
   return { repositories };
